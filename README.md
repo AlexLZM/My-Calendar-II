@@ -36,6 +36,7 @@ In calls to MyCalendar.book(start, end), start and end are integers in the range
 ## My solution strategy
 
 **Binary search + dictionary**
+
 Init: 
 1. a sorted list for all start and end timestamps.
 2. a dictionary mapping all timestamps to their counts
