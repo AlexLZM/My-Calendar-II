@@ -49,3 +49,6 @@ For each time interval [start, end) to book:
 5. Increment all counts in range [i, j) by 1.
 6. return True
 7. update all counts in range[i, j).
+
+## Time complexity
+O(n<sup>2</sup>) worst case: insertion in each timestamp
