@@ -27,3 +27,23 @@ The fifth event (5, 10) can be booked, as it does not use time 10 which is alrea
 The sixth event (25, 55) can be booked, as the time in [25, 40) will be double booked with the third event;
 the time [40, 50) will be single booked, and the time [50, 55) will be double booked with the second event.
 ```
+
+## Note
+
+The number of calls to MyCalendar.book per test case will be at most 1000.
+In calls to MyCalendar.book(start, end), start and end are integers in the range [0, 10^9].
+
+## My solution strategy
+
+**Binary search + dictionary**
+Init: 
+1. a sorted list for all start and end timestamps.
+2. a dictionary mapping all timestamps to their counts
+For each time interval [start, end) to book:
+1. find the index of start and end timestamp in the sorted list by binary search (as i, j).
+2. check any count in range [i, j) is greater or equal to 2, return false if so.
+3. if start is not in the keys: set its count same as its last timestamp; return false if the count >= 2; insert the start time to the sorted list. (Increment j by 1 after the insertion).
+4. if end is not in the keys: set its count same as its last timestamp and insert it to the sorted list.
+5. Increment all counts in range [i, j) by 1.
+6. return True
+7. update all counts in range[i, j]
