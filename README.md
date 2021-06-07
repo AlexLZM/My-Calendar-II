@@ -40,6 +40,7 @@ In calls to MyCalendar.book(start, end), start and end are integers in the range
 Init: 
 1. a sorted list for all start and end timestamps.
 2. a dictionary mapping all timestamps to their counts
+
 For each time interval [start, end) to book:
 1. find the index of start and end timestamp in the sorted list by binary search (as i, j).
 2. check any count in range [i, j) is greater or equal to 2, return false if so.
