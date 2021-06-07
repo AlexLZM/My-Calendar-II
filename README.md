@@ -47,4 +47,4 @@ For each time interval [start, end) to book:
 4. if end is not in the keys: set its count same as its last timestamp and insert it to the sorted list.
 5. Increment all counts in range [i, j) by 1.
 6. return True
-7. update all counts in range[i, j]
+7. update all counts in range[i, j).
